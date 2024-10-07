@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color : #cc99ff;
+            text-align : center;
+        }
+        button:hover{
+            cursor:pointer;
+            background-color :green;
+        }
+        .container{
+            margin-top: 40px;
+        }
+        #inp{
+            height: 90px;
+            width: 200px;
+            font-size: 20px;
+        }
+        .btns{
+            height: 15px;
+            width: 5px;
+            margin-left: 47%;
+        }
+        #deg{
+            border : 1px solid black;
+            border-radius : 5%;
+            background-color : #66f;
+            box-shadow : 21px solid black;
+            margin-bottom: 10px;
+        }
+        #fah{
+            border : 1px solid black;
+            border-radius : 5%;
+            background-color : #66f;
+            box-shadow : 21px solid black;
+        }
+        #result{
+            margin-top: 100px;
+        }
+    </style>   
+</head>
+<body>
+    <div class="container">
+    <h1>Temperature Converter</h1>
+    <input type="text" id="inp" rows="4" cols="7" placeholder="Enter value here.."></input>
+    <br><br>
+
+    <div class="btns">
+    <button id="deg">Degree To Fahrenheit</button>
+    <button id="fah">Fahrenheit To Degree</button>
+    </div>
+
+    <h3 id="result"></h3>
+    </div>
+
+    <script>
+        let inp = document.getElementById("inp");
+        let deg = document.getElementById("deg");
+        let fah = document.getElementById("fah");
+
+        deg.addEventListener("click", () =>{
+            let tempValue = inp.value;
+            let convertedTemp = (tempValue * 9/5) + 32;
+            result.textContent = `${tempValue}°C is equal to ${convertedTemp.toFixed(2)}°F`;
+        });
+        fah.addEventListener("click", () =>{
+            let fahValue = inp.value;
+            convertedTemp = (fahValue - 32) * 5/9;
+            result.textContent = `${fahValue}°F is equal to ${convertedTemp.toFixed(2)}°C`;
+        });
+        
+    </script>    
+</body>
+</html>
